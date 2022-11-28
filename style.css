@@ -16,8 +16,8 @@ html, body {
     display: block;
     position: absolute;
     z-index: 5;
-    top: 522px;
-    left: 50vw;
+    top: 49vh;
+    left: 51vw;
     transform: translate(-50%);
     /* background-color: #c9575763; */
   }
@@ -31,21 +31,20 @@ html, body {
 
 .base{
   position: absolute;
-  top: 83vh;
-  left: 9vw;
+  top: 75vh;
+  left: 22.2vw;
   z-index: 8;
   width: 484px;
   height: 330px;
 }
+
 
 .rotate-base{
   position: absolute;
   z-index: 8;
   width: 484px;
   height: 330px;
-
   transform-origin: top left;
-
 }
 
 .rotate-base .img{
@@ -66,8 +65,8 @@ html, body {
 
 .guitar{
   position: absolute;
-  top: 39vh;
-  left: 5vw;
+  top: 41vh;
+  left: 20.2vw;
 }
 
 .hand{
@@ -86,5 +85,4 @@ html, body {
 .img{
   background-image: url(./img/arm1.svg);
 }
-
 
