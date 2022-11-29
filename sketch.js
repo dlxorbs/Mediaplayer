@@ -81,10 +81,10 @@ function draw() {
     updateSpring();
     drawWire();
     Logics();
-    for (let i = 0; i < stringsVY.length; ++i) {
-        ellipse(ballx[i], bally[i], 20,20);
-    }
-    ellipse(mouseX, mouseY, 20,20);
+    // for (let i = 0; i < stringsVY.length; ++i) {
+    //     ellipse(ballx[i], bally[i], 20,20);
+    // }
+    // ellipse(mouseX, mouseY, 20,20);
 }
 
 //베지어를 for문을 이용해 여러개 그려줌
@@ -163,7 +163,7 @@ function updateSpring() {
     }
 
     for (let i = 0; i < stringsVY.length; ++i) {
-        if (40 > abs(sqrt((ballx[i]-mouseX)**2+(mouseY-bally[i])**2))) {
+        if (50 > abs(sqrt((ballx[i]-mouseX)**2+(mouseY-bally[i])**2))) {
             overs[i] = true;
             // 기타줄의 각 구별을 위한 3번째 줄이 움직이면 3이 출력
             move_i = i;

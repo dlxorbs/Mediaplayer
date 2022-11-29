@@ -10,11 +10,17 @@ html, body {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+
+  }
+
+
+  body{
+    position: relative;
     width: 100vw;
-    height: 100vh;
-      /* background-image: url(./img/back.svg);
+    height: 1400px;
+      background-image: url(./img/back.svg);
       background-repeat: no-repeat;
-      background-position: center bottom; */
+      background-position: center bottom;
   }
   canvas {
     display: block;
@@ -65,7 +71,7 @@ html, body {
   width: 580px;
   height: 467px;
   /* background-image: url(./img/arm1.svg); */
-  transition: 1s;
+
 }
 
 .move-base{
@@ -88,7 +94,7 @@ html, body {
   top: 445px;
   left: 900px;
   position: absolute;
-  background-color: rgba(57, 68, 68, 0.5);
+  /* background-color: rgba(57, 68, 68, 0.5); */
   width: 400px;
   height: 600px;
   z-index: 999;
@@ -98,7 +104,7 @@ html, body {
 .hand{
   position: absolute;
   width: 195px;
-  background-color: rgba(0, 255, 255, 0.329);
+  /* background-color: rgba(0, 255, 255, 0.329); */
   /* transform: translate(-50%,-50%); */
   left: 345px;
   top: 215px;
@@ -107,3 +113,10 @@ html, body {
 
 
 
+
+
+.player{
+  position: absolute;
+  bottom: 20px;
+  right: 100px;
+}

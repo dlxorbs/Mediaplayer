@@ -4,7 +4,7 @@ $(function () {
         mouseY = e.pageY;
         leftpoint = $('.base').offset().left;
         toppoint = $('.base').offset().top;
-        isDragging = true;
+        isclicked = true;
 
         let rad = Math.atan2(mouseX -leftpoint, mouseY -  toppoint);
         deg = (rad * (180 / Math.PI)*-1 )+50 ; 
@@ -22,26 +22,33 @@ $(function () {
     })
 
     $(document).mouseup(function(){
-        isDragging = false;
-        handChange()
+        if(mouseX < $(document).innerWidth()*4/9 
+        && mouseY > $(document).innerHeight()/2){
+            isclicked = false;
+            handChange()
+        }
     })
     $(document).mousedown(function(){
-        isDragging = true;
-        handChange()
+        if(mouseX < $(document).innerWidth()*4/9 
+        && mouseY > $(document).innerHeight()/2){
+            isclicked = true;
+            handChange()
+        }
+
     })
     // $(document).mousemove(function(){
-    //     isDragging = true;
+    //     isclicked = true;
     //     handChange()
     // })
 
-
+    
 
 
 })
 
 function handChange(){
     //손 모양 바꾸기
-    if(isDragging){
+    if(isclicked){
         $('.rotate-base img').attr('src', './img/armchange.svg')
   
     }else{
