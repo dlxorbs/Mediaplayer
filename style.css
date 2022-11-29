@@ -10,29 +10,39 @@ html, body {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./img/back.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
   }
   canvas {
     display: block;
     position: absolute;
     z-index: 5;
-    top: 49vh;
-    left: 51vw;
-    transform: translate(-50%);
+    top: 400px;
+    left: 210px;
+    /* transform: translate(-50%); */
     /* background-color: #c9575763; */
   }
   
   .body{
     position: absolute;
     width: 1600px;
-    left: 52vw;
-    transform: translate(-50%);
+    left: 0px;
+
 }
+
+  .container{
+   width: auto;
+   height: 100vh; 
+   position: relative;
+  }
 
 .base{
   position: absolute;
-  top: 75vh;
-  left: 22.2vw;
+  top: 900px;
+  left: 80px;
   z-index: 8;
   width: 484px;
   height: 330px;
@@ -58,27 +68,39 @@ html, body {
 
 .move-base{
   position: absolute;
-  top: 58.5vh;
-  left: 54.9vw;
+  top: 510px;
+  left: 944px;
   z-index: 8;
 }
 
 .guitar{
   position: absolute;
-  top: 41vh;
-  left: 20.2vw;
+  top: 300px;
+  left: 100px;
 }
 
-.hand{
-  position: absolute;
-  width: 190px;
-  background-color: aqua;
-  transform: translate(-50%,-50%);
-  left: 52vw;
-  z-index: 999;
-}
 .hand img{
   width: 100%;
+}
+.hand-position{
+  top: 502px;
+  left: 52vw;
+  position: absolute;
+  background-color: rgba(57, 68, 68, 0.5);
+  width: 400px;
+  height: 600px;
+  z-index: 999;
+  display: flex;
+  transform: translate(115px);
+}
+.hand{
+  position: absolute;
+  width: 195px;
+  background-color: rgba(0, 255, 255, 0.329);
+  /* transform: translate(-50%,-50%); */
+  left: 345px;
+  top: 115px;
+  cursor: pointer;
 }
 
 
