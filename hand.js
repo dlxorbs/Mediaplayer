@@ -25,20 +25,20 @@ $(function () {
         if(mouseX < $(document).innerWidth()*4/9 
         && mouseY > $(document).innerHeight()/2){
             isclicked = false;
-            handChange()
+            RighthandChange()
         }
     })
     $(document).mousedown(function(){
         if(mouseX < $(document).innerWidth()*4/9 
         && mouseY > $(document).innerHeight()/2){
             isclicked = true;
-            handChange()
+            RighthandChange()
         }
 
     })
     // $(document).mousemove(function(){
     //     isclicked = true;
-    //     handChange()
+    //     RighthandChange()
     // })
 
     
@@ -46,7 +46,7 @@ $(function () {
 
 })
 
-function handChange(){
+function RighthandChange(){
     //손 모양 바꾸기
     if(isclicked){
         $('.rotate-base img').attr('src', './img/armchange.svg')
