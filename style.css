@@ -12,15 +12,15 @@ html, body {
     -o-user-drag: none;
     width: 100vw;
     height: 100vh;
-    background-image: url(./img/back.svg);
-    background-repeat: no-repeat;
-    background-position: center bottom;
+      /* background-image: url(./img/back.svg);
+      background-repeat: no-repeat;
+      background-position: center bottom; */
   }
   canvas {
     display: block;
     position: absolute;
     z-index: 5;
-    top: 400px;
+    top: 500px;
     left: 210px;
     /* transform: translate(-50%); */
     /* background-color: #c9575763; */
@@ -29,6 +29,7 @@ html, body {
   .body{
     position: absolute;
     width: 1600px;
+    top: 100px;
     left: 0px;
 
 }
@@ -41,7 +42,7 @@ html, body {
 
 .base{
   position: absolute;
-  top: 900px;
+  top: 1000px;
   left: 80px;
   z-index: 8;
   width: 484px;
@@ -57,25 +58,26 @@ html, body {
   transform-origin: top left;
 }
 
-.rotate-base .img{
+.rotate-base img{
   position: absolute;
   top: -72px;
   left: -72px;
   width: 580px;
   height: 467px;
-
+  /* background-image: url(./img/arm1.svg); */
+  transition: 1s;
 }
 
 .move-base{
   position: absolute;
-  top: 510px;
+  top: 610px;
   left: 944px;
   z-index: 8;
 }
 
 .guitar{
   position: absolute;
-  top: 300px;
+  top: 400px;
   left: 100px;
 }
 
@@ -83,8 +85,8 @@ html, body {
   width: 100%;
 }
 .hand-position{
-  top: 502px;
-  left: 52vw;
+  top: 445px;
+  left: 900px;
   position: absolute;
   background-color: rgba(57, 68, 68, 0.5);
   width: 400px;
@@ -99,12 +101,9 @@ html, body {
   background-color: rgba(0, 255, 255, 0.329);
   /* transform: translate(-50%,-50%); */
   left: 345px;
-  top: 115px;
+  top: 215px;
   cursor: pointer;
 }
 
 
-.img{
-  background-image: url(./img/arm1.svg);
-}
 

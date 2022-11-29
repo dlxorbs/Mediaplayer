@@ -33,8 +33,8 @@ let firstStringY = 350;
 let stringY=[]
 
 // 기타줄의 물리정보
-let M = 1,  // Mass
-    K = 1.8,  // Spring constant
+let M = 2,  // Mass
+    K = 2.8,  // Spring constant
     D = 0.52, // Damping
     R = firstStringY;  // Rest position
 
@@ -43,11 +43,11 @@ let stringsVY = [];
 let stringsVX = [];
 
 //기타줄의 소리들
-// let 당길때 = createAudio('assets/beat.mp3');
-// let one = createAudio('assets/beat.mp3');
-// let two = createAudio('assets/beat.mp3');
-// let three = createAudio('assets/beat.mp3');
-// let four = createAudio('assets/beat.mp3');
+let 당길때 = createAudio('assets/beat.mp3');
+let one = createAudio('assets/beat.mp3');
+let two = createAudio('assets/beat.mp3');
+let three = createAudio('assets/beat.mp3');
+let four = createAudio('assets/beat.mp3');
 
 function setup() {
     createCanvas(1300, 750);
@@ -98,7 +98,7 @@ function drawWire() {
         let l = 14;
 
         //손으로 줄을 잡는 위치에 따라서 베지어의 곡선이 짧아짐
-        let hand = 100;
+        let hand = goal;
         let ratio = 0.54;
 
         let adjustmentRightX = right + l*i - hand
@@ -167,7 +167,7 @@ function updateSpring() {
             overs[i] = true;
             // 기타줄의 각 구별을 위한 3번째 줄이 움직이면 3이 출력
             move_i = i;
-            // console.log(move_i)
+            console.log(move_i)
         }
         // if (mouseX > left && mouseX < right && mouseY > y && mouseY < y + springHeight) {
         //     over = true;
@@ -202,7 +202,7 @@ function mouseReleased() {
     for (let i = 0; i < stringsVY.length; ++i) { 
         moves[i] = false;
     }
-//     one.play();
+    // oen.play();
 }
 
-// console.log(stringsVX)
+console.log(stringsVX)
