@@ -16,13 +16,17 @@ let audios = [
         image: './musics/02.png',
         title: 'Third Song',
         author: 'Third Author'
-    }
+
+    },
+
     {
         audio: './musics/03.mp3',
         image: './musics/03.png',
         title: 'Fourth Song',
         author: 'Fourth Author'
-    }
+
+    },
+
     {
         audio: './musics/04.mp3',
         image: './musics/04.png',
@@ -35,45 +39,53 @@ let audios = [
 let currentAudio = new Audio()
 
 
-
 $(function(){
     
     // 리스트에 추가
     for(let i in audios){
         let dom = $('<div></div>')
         dom.append('<p>' + audios[i].author + ' - ' + audios[i].title + '</p>')
-        dom.append('<img src="' + audios[i].image + '" width="100px">')
+
+        // dom.append('<img src="' + audios[i].image + '" width="100px">')
         dom.append(new Audio(audios[i].audio))
 
-        $('#list').append(dom)
+        $('.player').append(dom)
 
         // DOM 클릭 이벤트
         dom.click(function(){
-            currentAudio.pause()
+            currentAudio.pause();
+
             currentAudio = $(this).find('audio')[0]
             currentAudio.currentTime = 0
             currentAudio.play()
 
+
             $('#list > div').removeClass('playing')
             $(this).addClass('playing')
-
-            $('#current_image').attr('src', audios[i].image);
-            $('#current_title').text(audios[i].author + ' - ' + audios[i].title)
         })
 
     }
 
-    // 현재 재생 기본 값 (0번 곡 자동으로 지정)
-    currentAudio = $('#list audio')[0]
+    // 현재 재생 기본 값 (0번 곡 자동으로 지정)r
+    currentAudio = $('.player audio')[0]
     $('#current_image').attr('src', audios[0].image);
-    $('#current_title').text(audios[0].author + ' - ' + audios[0].title)
-    $('#list > div').eq(0).addClass('playing')
+    $('#current_title').text(audios[0].author + ' - ' + audios[0].title);
+
 
 
     // 현재 시간 얻기
     setInterval(function(){
-        $('#current_progress').text(currentAudio.currentTime + '/' + currentAudio.duration)
-    }, 50)
+
+        $('#current_progress').css({
+           'width' :  (currentAudio.currentTime/currentAudio.duration)*100 +'% '
+         })
+    }, 1)
+
+   //인디케이터 누르기
+   $('#progressbar').on( 'click mousedown mouseup', function(){
+
+   })
+
 
     // 버튼 이벤트
     $('#btn_play').click(function(){ // 재생/일시정지
@@ -92,12 +104,16 @@ $(function(){
 
     $('#btn_prev').click(function(){ // 이전곡
         let index = $(currentAudio).parent().index()
-        $('#list > div').eq( (index - 1) % audios.length ).click()
+
+        $('.player > div').eq( (index - 1) % audios.length ).click()
+
     })
 
     $('#btn_next').click(function(){ // 다음곡
         let index = $(currentAudio).parent().index()
-        $('#list > div').eq( (index + 1) % audios.length ).click()
+
+        $('.player > div').eq( (index + 1) % audios.length ).click()
+
     })
 
 })
