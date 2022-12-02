@@ -10,15 +10,20 @@ html, body {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-
   }
 
+
+  main{
+    position: relative;
+
+  }
 
   body{
     position: relative;
     width: 100vw;
-    height: 1400px;
-      background-image: url(./img/back.svg);
+    height: 100vh;
+    overflow: hidden;
+      /* background-image: url(./img/back.svg); */
       background-repeat: no-repeat;
       background-position: center bottom;
   }
