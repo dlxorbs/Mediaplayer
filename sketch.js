@@ -43,11 +43,11 @@ let stringsVY = [];
 let stringsVX = [];
 
 //기타줄의 소리들
-let 당길때 = createAudio('assets/beat.mp3');
-let one = createAudio('assets/beat.mp3');
-let two = createAudio('assets/beat.mp3');
-let three = createAudio('assets/beat.mp3');
-let four = createAudio('assets/beat.mp3');
+// let 당길때 = createAudio('assets/beat.mp3');
+// let one = createAudio('assets/beat.mp3');
+// let two = createAudio('assets/beat.mp3');
+// let three = createAudio('assets/beat.mp3');
+// let four = createAudio('assets/beat.mp3');
 
 function setup() {
     createCanvas(1300, 750);

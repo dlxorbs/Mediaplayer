@@ -102,7 +102,7 @@ html, body {
   /* background-color: rgba(57, 68, 68, 0.5); */
   width: 400px;
   height: 600px;
-  z-index: 999;
+  z-index: 9;
   display: flex;
   transform: translate(115px);
 }
@@ -119,9 +119,3 @@ html, body {
 
 
 
-
-.player{
-  position: absolute;
-  bottom: 20px;
-  right: 100px;
-}
