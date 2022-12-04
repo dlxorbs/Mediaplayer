@@ -63,6 +63,7 @@ html, body {
   width: 484px;
   height: 330px;
   transform-origin: top left;
+
 }
 
 .rotate-base img{
@@ -120,4 +121,27 @@ html, body {
   position: absolute;
   bottom: 20px;
   right: 100px;
+}
+
+
+@keyframes movinghand {
+  0%{
+    transform: rotate(-20deg);
+  }
+
+  50%{
+    transform: rotate(-40deg);
+  }
+
+  100%{
+    transform: rotate(-20deg);
+  }
+  
+  
+}
+
+
+.movinghand{
+  animation : movinghand  1s infinite;
+  
 }
