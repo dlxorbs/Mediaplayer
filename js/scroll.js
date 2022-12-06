@@ -37,7 +37,6 @@ $(function () {
             }else{
                 scrollYY = scrollYY + (scrollYYto - scrollYY)* acc
             }
-                console.log(scrollYY) 
             if(scrollYY > 465){
                 clearTimeout(myRepeat);
                 $('.player').css('bottom', '40px')
