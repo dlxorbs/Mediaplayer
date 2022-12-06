@@ -5,8 +5,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="player.css">
+    <script src="js/bodymovin.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/player.css">
     <meta charset="utf-8"/>
 
   </head>
@@ -17,6 +18,7 @@
     <script src="./js/hand.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/music.js"></script>
+    <script src="./js/album.js"></script>
 
 <main>
   <div class="hand-position">
@@ -51,12 +53,23 @@
     </div>
 
     <div class="body man">
-      <img src="./img/body.svg" alt="">
+      <img src="./img/body_Top.svg" alt="">
+    </div>
+    <div class="arm">
+      <div class="rotate">
+      <div class="arm_top">
+        <img src="./img/arm_Top.svg" alt="">
+      </div>
+    </div>
+      <div class="arm_bottom">
+        <img src="./img/arm_Bottom.svg" alt="">
+      </div>
+    </div>
+    <div class="body man Bottom">
+      <img src="./img/body_Bottom.svg" alt="">
     </div>
 
-    <div class="move-base man">
-      <img src="./img/arm2.svg" alt="">
-    </div>
+
 
     <div class="guitar man">
       <img src="./img/guitar.svg" alt="">
@@ -85,19 +98,20 @@
 
   <div class="player">
     <h1 id="current_title"></h1>
+    <div class="cut">
     <div class="album">
       <div><img src="img/album/album1.jpg" alt=""></div>
       <div><img src="img/album/album1.jpg" alt=""></div>
       <div><img src="img/album/album1.jpg" alt=""></div>
       <div><img src="img/album/album1.jpg" alt=""></div>
-      <div><img src="img/album/album1.jpg" alt=""></div>
     </div>
+  </div>
     <div id="progressbar">
       <input type="range" min="0" max="100" id = "current_progress">
     </div>
     <div class="time">
-      <div class="start">1:56</div>
-      <div class="end">3:21</div>
+      <div class="start"></div>
+      <div class="end"></div>
     </div>
 
     <input type="range" min="0" max="100" id = "volume">
@@ -113,6 +127,16 @@
     <div class="playlists"></div>
   </div>
 </main>
+    <img class="tree" src="img/tree.svg">
+    <img class="sun" src="img/sun.svg">
+    <img class="grass1" src="img/grass1.svg">
+    <img class="grass1-1" src="img/grass1.svg">
+    <img class="grass2" src="img/grass2.svg">
+    <img class="grass3" src="img/grass3.svg">
+    <img class="grass4" src="img/grass2.svg">
+    <img class="grass5" src="img/grass2.svg">
+    <img class="cloud1" src="img/cloud1.svg">
+    <img class="cloud2" src="img/cloud2.svg">
 
   </body>
 </html>
