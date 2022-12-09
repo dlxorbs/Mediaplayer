@@ -1,27 +1,27 @@
 let audios = [
     {
         audio: './musics/00.mp3',
-        image: './musics/00.png',
-        title: 'First Song',
-        author: 'First Author'
+        image: 'img/album/00.jpg',
+        title:  "Let's Go See the Stars",
+        author: 'Jukjae'
     },
     {
         audio: './musics/01.mp3',
-        image: './musics/01.png',
-        title: 'Second Song',
-        author: 'Second Author'
+        image: 'img/album/01.jpg',
+        title: 'Lullaby',
+        author: 'Jukjae'
     },
     {
         audio: './musics/02.mp3',
-        image: './musics/02.png',
-        title: 'Third Song',
-        author: 'Third Author'
+        image: 'img/album/02.jpg',
+        title: 'Lover',
+        author: 'Taylor Swift'
     },
     {
         audio: './musics/03.mp3',
-        image: './musics/03.png',
-        title: 'Fourth Song',
-        author: 'Fourth Author'
+        image: 'img/album/03.jpg',
+        title: 'We Were Dancing In The Dark',
+        author: 'Rory Mcleod'
 
     }
 ]
@@ -31,8 +31,6 @@ let mousecliked = false;
 
 // 마우스를 눌렀나 - 아래?
 let mousecliked2 = false;
-
-
 
 
 // 윗 박스에서 마우스를 누르고 아래박스에서 마우스를 떼면 음악재생
@@ -60,10 +58,12 @@ function moving(){
     if(currentAudio.paused == false){
         $('.rotate-base').addClass('movinghand')
         $('.rotate-base img').attr('src', './img/armchange.svg')
+        $('#btn_play > img').attr('src', './img/stop.svg')
+
     }else{
         $('.rotate-base').removeClass('movinghand')
         $('.rotate-base img').attr('src', './img/armchange.svg')
-
+        $('#btn_play > img').attr('src', './img/play.svg')
     }
 }
 
@@ -80,6 +80,7 @@ $(function(){
         // dom.append('<img src="' + audios[i].image + '" width="100px">')
         dom.append(new Audio(audios[i].audio))
 
+        $('.album').append('<div><img src = "'+audios[i].image+'"></div>')
         $('.playlists').append(dom)
 
         // DOM 클릭 이벤트
@@ -90,6 +91,12 @@ $(function(){
             currentAudio.play()
             $('#current_image').attr('src', audios[i].image);
             $('#current_title').text(audios[i].author + ' - ' + audios[i].title)
+            $('.title > p').text(audios[i].title)
+            $('.singer > p').text(audios[i].author)
+
+
+     
+
 
             //왼손움직임시 앨범 캐러셀 변경
             let index = $(currentAudio).parent().index()
@@ -115,13 +122,12 @@ $(function(){
     currentAudio = $('.player audio')[0]
     $('#current_image').attr('src', audios[0].image);
     $('#current_title').text(audios[0].author + ' - ' + audios[0].title);
-
+    $('.title > p').text(audios[0].title)
+    $('.singer > p').text(audios[0].author)
   
      //인디케이터 누르기
     $('#current_progress').on( 'input', function(){
         currentAudio.currentTime = ($(this).val()/100)*currentAudio.duration
-
-
      })
 
      
@@ -209,18 +215,16 @@ $(function(){
     })
 
 
-    
+    // $('#btn_stop').click(function(){ // 완전 정지
+    //     currentAudio.pause()
+    //     currentAudio.currentTime = 0
 
-    $('#btn_stop').click(function(){ // 완전 정지
-        currentAudio.pause()
-        currentAudio.currentTime = 0
-
-        $('.rotate-base').removeClass('movinghand')
-        $('.rotate-base img').attr('src', './img/arm1.svg')
+    //     $('.rotate-base').removeClass('movinghand')
+    //     $('.rotate-base img').attr('src', './img/arm1.svg')
         
-        let range = $('#volume').val()
-        currentAudio.volume = range/100;
-    })
+    //     let range = $('#volume').val()
+    //     currentAudio.volume = range/100;
+    // })
 
     $('#btn_prev').click(function(){ // 이전곡
         let index = $(currentAudio).parent().index()
@@ -256,8 +260,11 @@ $(function(){
 
     });
     
-    $('button').click(function(){ // 재생/일시정지
+    $('button').click(function(){ // 클릭시 움직이는 함수 실행
         moving();
+
+
+        console.log(this)
     })
 
 })
