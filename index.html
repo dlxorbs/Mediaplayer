@@ -18,7 +18,7 @@
     <script src="./js/hand.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/music.js"></script>
-    <script src="./js/album.js"></script>
+
 
 <main>
   <div class="hand-position">
@@ -100,10 +100,10 @@
     <h1 id="current_title"></h1>
     <div class="cut">
     <div class="album">
+      <!-- <div><img src="img/album/album1.jpg" alt=""></div>
       <div><img src="img/album/album1.jpg" alt=""></div>
       <div><img src="img/album/album1.jpg" alt=""></div>
-      <div><img src="img/album/album1.jpg" alt=""></div>
-      <div><img src="img/album/album1.jpg" alt=""></div>
+      <div><img src="img/album/album1.jpg" alt=""></div> -->
     </div>
   </div>
     <div id="progressbar">
@@ -115,15 +115,14 @@
     </div>
 
     <input type="range" min="0" max="100" id = "volume">
-    <div class="title"><p>Say It, Just Say It</p></div>
-    <div class="singer"><p>The Mowgli’s</p></div>
+    <div class="title"><p></p></div>
+    <div class="singer"><p></p></div>
 
-    
-    <button id="btn_play">재생</button>
-    <button id="btn_stop">정지</button>
-    <button id="btn_prev">이전</button>
-    <button id="btn_next">다음</button>
-
+    <div class="btncontainer">
+      <button id="btn_prev"><img src="./img/pre.svg" /></button>
+      <button id="btn_play"><img src="./img/play.svg" /></button>
+      <button id="btn_next"><img src="./img/next.svg" /></button>
+    </div>
     <div class="playlists"></div>
   </div>
 </main>
