@@ -1,6 +1,6 @@
 let acc = 0.06;
 let scrollYY = 4;
-let scrollYYto = 470;
+let scrollYYto = 360;
 
 $(function () {
     // setInterval(function(){
@@ -37,7 +37,10 @@ $(function () {
             }else{
                 scrollYY = scrollYY + (scrollYYto - scrollYY)* acc
             }
-            if(scrollYY > 465){
+
+    
+
+            if(scrollYY > 350){
                 clearTimeout(myRepeat);
                 $('.player').css('bottom', '40px')
             }

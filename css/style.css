@@ -51,6 +51,7 @@ html, body {
    width: auto;
    height: 100vh; 
    position: relative;
+   bottom: 0px;
   }
 
 .base{
@@ -191,7 +192,8 @@ html, body {
   position:absolute;
   width: 700px;
   left: -370px;
-  top: 114vh;
+  /* top: 114vh; */
+  bottom: -470px;
   z-index: 99;
   animation: windmove, linear;
   animation-duration: 40s;
@@ -202,7 +204,8 @@ html, body {
   position:absolute;
   width: 500px;
   right: 260px;
-  top: 133vh;
+  /* top: 133vh; */
+  bottom: -470px;
   z-index: 99;
   transform: scaleX(-1);
   animation: windmove, linear;
@@ -214,8 +217,9 @@ html, body {
 .grass2{
   position:absolute;
   width: 700px;
-  right: -320px;
-  top: 114vh;
+  left: 140px;
+  /* top: 114vh; */
+  bottom: -470px;
   z-index: 0;
   animation: windmove, linear;
   animation-duration: 40s;
@@ -227,7 +231,8 @@ html, body {
   position:absolute;
   width: 700px;
   right: 100px;
-  top: 114vh;
+  /* top: 114vh; */
+  bottom: -470px;
   z-index: -1;
   animation: windmove, linear;
   animation-duration: 45s;
@@ -240,7 +245,8 @@ html, body {
   position:absolute;
   width: 600px;
   left: 400px;
-  top: 124vh;
+  /* top: 124vh; */
+  bottom: -470px;
   z-index: -1;
   animation: windmove, linear;
   animation-duration: 42s;
@@ -253,7 +259,8 @@ html, body {
   position:absolute;
   width: 600px;
   right: 400px;
-  top: 124vh;
+  /* top: 124vh; */
+  bottom: -470px;
   z-index: -1;
   animation: windmove, linear;
   animation-duration: 42s;
@@ -266,7 +273,8 @@ html, body {
   position:absolute;
   width: 400px;
   left: 60vw;
-  top: 26vh;
+  /* top: 26vh; */
+  bottom: -470px;
   z-index: -3;
   animation: cloudmove, linear;
   animation-duration: 220s;
@@ -277,7 +285,8 @@ html, body {
   position:absolute;
   width: 300px;
   right: 130px;
-  top: 24vh;
+  /* top: 24vh; */
+  bottom: -470px;
   z-index: -3;
   animation: cloudmove2, linear;
   animation-duration: 200s;
@@ -372,10 +381,14 @@ html, body {
   top: 270px;
   /* background-color: rgb(31, 92, 110); */
 }
+main{
+  position: sticky;
+  bottom: 0px;
+}
 
 
 
 .start{
   width: 50%;
-  height: 12ox;
+  height: 12px;
 }
