@@ -1,157 +1,166 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 
-  }
+}
 
 
-  body{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    /* overflow: hidden; */
-    /* background-image: url(./img/back.svg); */
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-color: #F9F4E0;
+body{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+  /* background-image: url(./img/back.svg); */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: #F9F4E0;
 
-  }
-  canvas {
-    display: block;
-    position: absolute;
-    z-index: 5;
-    top: 500px;
-    left: 210px;
-    /* transform: translate(-50%); */
-    /* background-color: #c9575763; */
-  }
-  
-  .body{
-    position: absolute;
-    width: 1600px;
-    top: 100px;
-    left: 0px;
+}
+canvas {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  top: 500px;
+  left: 210px;
+  /* transform: translate(-50%); */
+  /* background-color: #c9575763; */
+}
+
+.body{
+  position: absolute;
+  width: 1600px;
+  top: 100px;
+  left: 0px;
 }
 .Bottom{
-  z-index: 1;
-  top: 1050px;
-  left: 300px;
+z-index: 1;
+top: 1050px;
+left: 300px;
 }
 
-  .container{
-   width: auto;
-   height: 100vh; 
-   position: relative;
-   bottom: 0px;
-  }
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.container{
+ width: 100vw;
+ height: 1500px;
+ position: fixed;
+ /* background-color: rgb(109, 36, 114); */
+ bottom: 0vw;
+ left: 3vw;
+}
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
 
 .base{
-  position: absolute;
-  top: 1000px;
-  left: 80px;
-  z-index: 8;
-  width: 484px;
-  height: 330px;
+position: absolute;
+top: 1000px;
+left: 80px;
+z-index: 8;
+width: 484px;
+height: 330px;
 }
 
 
 .rotate-base{
-  position: absolute;
-  z-index: 8;
-  width: 484px;
-  height: 330px;
-  transform-origin: top left;
+position: absolute;
+z-index: 8;
+width: 484px;
+height: 330px;
+transform-origin: top left;
 
 }
 
 .rotate-base img{
-  position: absolute;
-  top: -72px;
-  left: -72px;
-  width: 580px;
-  height: 467px;
-  /* background-image: url(./img/arm1.svg); */
+position: absolute;
+top: -72px;
+left: -72px;
+width: 580px;
+height: 467px;
+/* background-image: url(./img/arm1.svg); */
 
 }
 
 .arm2{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -9999;
-  /* background-color: aquamarine; */
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: -9999;
+/* background-color: aquamarine; */
 }
 
 .guitar{
-  position: absolute;
-  top: 400px;
-  left: 100px;
-  z-index: 2;
+position: absolute;
+top: 400px;
+left: 100px;
+z-index: 2;
 }
 
 .hand img{
-  width: 100%;
+width: 100%;
 }
 .hand-position{
-  top: 445px;
-  left: 900px;
-  position: absolute;
-  /* background-color: rgba(57, 68, 68, 0.5); */
-  width: 400px;
-  height: 600px;
-  z-index: 999;
-  display: flex;
-  transform: translate(115px);
+top: 445px;
+left: 900px;
+position: absolute;
+/* background-color: rgba(57, 68, 68, 0.5); */
+width: 400px;
+height: 600px;
+z-index: 999;
+display: flex;
+transform: translate(115px);
 }
 .hand{
-  position: absolute;
-  width: 195px;
-  /* background-color: rgba(0, 255, 255, 0.329); */
-  /* transform: translate(-50%,-50%); */
-  left: 345px;
-  top: 215px;
-  cursor: pointer;
+position: absolute;
+width: 195px;
+/* background-color: rgba(0, 255, 255, 0.329); */
+/* transform: translate(-50%,-50%); */
+left: 345px;
+top: 215px;
+cursor: pointer;
 }
 
-
-
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.bodyAll{
+/* background-color: aqua; */
+height: 1500px;
+}
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
 .player{
-  position: absolute;
-  bottom: 20px;
-  right: 100px;
+position: absolute;
+bottom: 20px;
+right: 100px;
 }
 
 
 @keyframes movinghand {
-  0%{
-    transform: rotate(-20deg);
-  }
+0%{
+  transform: rotate(-20deg);
+}
 
-  50%{
-    transform: rotate(-40deg);
-  }
+50%{
+  transform: rotate(-40deg);
+}
 
-  100%{
-    transform: rotate(-20deg);
-  }
-  
-  
+100%{
+  transform: rotate(-20deg);
+}
+
+
 }
 
 
 .movinghand{
-  animation : movinghand  1s infinite;
+animation : movinghand  1s infinite;
 }
 
 
@@ -160,235 +169,225 @@ html, body {
 
 
 .tree{
-  position: absolute;
-  width: 776px;
-  left: -8vw;
-  top: -30vh;
-  z-index: -2;
+position: absolute;
+width: 900px;
+left: -8vw;
+bottom: -24vh;
+z-index: -2;
 }
 .cloud1{
-  position: absolute;
-  left: 60vw;
-  top: 2vh;
+position: absolute;
+left: 60vw;
+top: 2vh;
 }
 
 .sun{
-  position: absolute;
-  top: 5vh;
-  left: 77vw;
-  z-index: -80;
-  animation: sunmove, linear;
-  animation-duration: 120s;
-  animation-iteration-count: infinite;
+position: absolute;
+top: 5vh;
+left: 77vw;
+z-index: -80;
+animation: sunmove, linear;
+animation-duration: 120s;
+animation-iteration-count: infinite;
 }
 
 .cloud2{
-  position: absolute;
-  top: 12vh;
-  left: 91vw;
+position: absolute;
+top: 12vh;
+left: 91vw;
 }
 
+/* 풀들은 전부 아래로 고정 */
+
 .grass1{
-  position:absolute;
-  width: 700px;
-  left: -370px;
-  /* top: 114vh; */
-  bottom: -470px;
-  z-index: 99;
-  animation: windmove, linear;
-  animation-duration: 40s;
-  animation-iteration-count: infinite;
+position:absolute;
+width: 700px;
+left: -370px;
+bottom: -61vh;
+z-index: 99;
+animation: windmove, linear;
+animation-duration: 40s;
+animation-iteration-count: infinite;
 }
 
 .grass1-1{
-  position:absolute;
-  width: 500px;
-  right: 260px;
-  /* top: 133vh; */
-  bottom: -470px;
-  z-index: 99;
-  transform: scaleX(-1);
-  animation: windmove, linear;
-  animation-duration: 36s;
-  animation-iteration-count: infinite;
-  animation-delay: -1.3s;
+position:absolute;
+width: 500px;
+right: 260px;
+bottom: -81vh;
+z-index: 99;
+transform: scaleX(-1);
+animation: windmove, linear;
+animation-duration: 36s;
+animation-iteration-count: infinite;
+animation-delay: -1.3s;
 }
 
 .grass2{
-  position:absolute;
-  width: 700px;
-  left: 140px;
-  /* top: 114vh; */
-  bottom: -470px;
-  z-index: 0;
-  animation: windmove, linear;
-  animation-duration: 40s;
-  animation-iteration-count: infinite;
-  animation-delay: -2.3s;
+position:absolute;
+width: 700px;
+right: -320px;
+bottom: -71vh;
+z-index: 0;
+animation: windmove, linear;
+animation-duration: 40s;
+animation-iteration-count: infinite;
+animation-delay: -2.3s;
 
 }
 .grass3{
-  position:absolute;
-  width: 700px;
-  right: 100px;
-  /* top: 114vh; */
-  bottom: -470px;
-  z-index: -1;
-  animation: windmove, linear;
-  animation-duration: 45s;
-  animation-iteration-count: infinite;
-  animation-delay: -2.2s;
+position:absolute;
+width: 700px;
+right: 5vw;
+bottom: -61vh;
+z-index: -1;
+animation: windmove, linear;
+animation-duration: 45s;
+animation-iteration-count: infinite;
+animation-delay: -2.2s;
 
 }
 
 .grass4{
-  position:absolute;
-  width: 600px;
-  left: 400px;
-  /* top: 124vh; */
-  bottom: -470px;
-  z-index: -1;
-  animation: windmove, linear;
-  animation-duration: 42s;
-  animation-iteration-count: infinite;
-  animation-delay: -1.5s;
+position:absolute;
+width: 600px;
+left: 700px;
+bottom: -71vh;
+z-index: -1;
+animation: windmove, linear;
+animation-duration: 42s;
+animation-iteration-count: infinite;
+animation-delay: -1.5s;
 
 }
 
 .grass5{
-  position:absolute;
-  width: 600px;
-  right: 400px;
-  /* top: 124vh; */
-  bottom: -470px;
-  z-index: -1;
-  animation: windmove, linear;
-  animation-duration: 42s;
-  animation-iteration-count: infinite;
-  animation-delay: -2.6s;
+position:absolute;
+width: 600px;
+right: 400px;
+bottom: -61vh;
+z-index: -1;
+animation: windmove, linear;
+animation-duration: 42s;
+animation-iteration-count: infinite;
+animation-delay: -2.6s;
 
 }
 
 .cloud1{
-  position:absolute;
-  width: 400px;
-  left: 60vw;
-  /* top: 26vh; */
-  bottom: -470px;
-  z-index: -3;
-  animation: cloudmove, linear;
-  animation-duration: 220s;
-  animation-iteration-count: infinite;
+position:absolute;
+width: 400px;
+left: 60vw;
+top: 26vh;
+z-index: -3;
+animation: cloudmove, linear;
+animation-duration: 220s;
+animation-iteration-count: infinite;
 }
 
 .cloud2{
-  position:absolute;
-  width: 300px;
-  right: 130px;
-  /* top: 24vh; */
-  bottom: -470px;
-  z-index: -3;
-  animation: cloudmove2, linear;
-  animation-duration: 200s;
-  animation-iteration-count: infinite;
+position:absolute;
+width: 300px;
+right: 130px;
+top: 24vh;
+z-index: -3;
+animation: cloudmove2, linear;
+animation-duration: 200s;
+animation-iteration-count: infinite;
 }
 
 
 /* 배경 애니메이션 */
 @keyframes cloudmove{
-  from {
-    transform: translateX(-10vw);
-  }
-  /* keyframe */
-  to {
-    transform: translateX(-100vw);
-  }
+from {
+  transform: translateX(-10vw);
+}
+/* keyframe */
+to {
+  transform: translateX(-100vw);
+}
 }
 @keyframes cloudmove2{
-  from {
-    transform: translateX(-10vw);
-  }
-  /* keyframe */
-  to {
-    transform: translateX(-100vw);
-  }
+from {
+  transform: translateX(-10vw);
+}
+/* keyframe */
+to {
+  transform: translateX(-100vw);
+}
 }
 @keyframes sunmove{
-  from {
-    transform:rotate(0)
-  }
-  /* keyframe */
-  to {
-    transform:rotate(360deg)
+from {
+  transform:rotate(0)
+}
+/* keyframe */
+to {
+  transform:rotate(360deg)
 
-  }
+}
 }
 
 
 
 @keyframes windmove{
-  0% {
-    transform:skewX(5deg) translateX(-50px)
-  }
-  25%{
-    transform:skewX(-5deg) translateX(50px)
-  }
-  50%{
-    transform:skewX(5deg) translateX(-50px)
-  }
-  75%{
-    transform:skewX(-5deg) translateX(50px)
-  }
-  /* keyframe */
-  100% {
-    transform:skewX(5deg) translateX(-50px)
+0% {
+  transform:skewX(5deg) translateX(-50px)
+}
+25%{
+  transform:skewX(-5deg) translateX(50px)
+}
+50%{
+  transform:skewX(5deg) translateX(-50px)
+}
+75%{
+  transform:skewX(-5deg) translateX(50px)
+}
+/* keyframe */
+100% {
+  transform:skewX(5deg) translateX(-50px)
 
-  }
+}
 }
 
 .move-base{
-  position: absolute;
-  z-index: -0;
-  left: 780px;
+position: absolute;
+z-index: -0;
+left: 780px;
 }
 
 .arm{
-  z-index: -1;
-  position: absolute;
-  top: 600px;
-  left: 760px;
-  /* background-color: bisque; */
+z-index: -1;
+position: absolute;
+top: 600px;
+left: 760px;
+/* background-color: bisque; */
 }
 
 .rotate{
-  top: 40px;
-  left: -20px;
-  transform: rotate(-40deg);
-  position: absolute;
-  /* background-color: rgba(44, 36, 26, 0.349); */
+top: 40px;
+left: -20px;
+transform: rotate(-0deg);
+position: absolute;
+/* background-color: rgba(44, 36, 26, 0.349); */
 
 }
 .arm_top{
-  position: absolute;
-  top:-50px;
-  left: -80px;
-  /* background-color: bisque; */
+position: absolute;
+top:-50px;
+left: -80px;
+/* background-color: bisque; */
 }
 .arm_bottom{
-  transform: rotate(-10deg);
-  position: absolute;
-  left: 30px;
-  top: 270px;
-  /* background-color: rgb(31, 92, 110); */
-}
-main{
-  position: sticky;
-  bottom: 0px;
+transform: rotate(-10deg);
+position: absolute;
+left: 30px;
+top: 270px;
+/* background-color: rgb(31, 92, 110); */
 }
 
 
 
 .start{
-  width: 50%;
-  height: 12px;
+width: 50%;
+height: 12ox;
 }

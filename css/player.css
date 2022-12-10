@@ -1,7 +1,7 @@
 
 .player{
     position: fixed;
-    z-index: 25;
+    z-index: 999;
     bottom: -800px;
     right: 40px;
     width: 300px;
