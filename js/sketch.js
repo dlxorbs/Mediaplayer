@@ -169,10 +169,6 @@ function updateSpring() {
             move_i = i;
             // console.log(move_i)
         }
-        // if (mouseX > left && mouseX < right && mouseY > y && mouseY < y + springHeight) {
-        //     over = true;
-        //     move_i = i;
-        // }
     }
 
     //이게 뭐지?

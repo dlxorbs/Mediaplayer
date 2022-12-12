@@ -18,7 +18,7 @@ body{
   position: relative;
   width: 100vw;
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   /* background-image: url(./img/back.svg); */
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -47,35 +47,202 @@ top: 1050px;
 left: 300px;
 }
 
-/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/* 박건도 변경ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 .container{
  width: 100vw;
  height: 1500px;
  position: fixed;
  /* background-color: rgb(109, 36, 114); */
  bottom: 0vw;
- left: 3vw;
+ left: 2vw;
 }
-/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/* 박건도 변경ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
 .base{
 position: absolute;
 top: 1000px;
 left: 80px;
-z-index: 8;
+z-index: 999;
 width: 484px;
 height: 330px;
 }
 
 
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.tutorial{
+z-index: 999;
+transition: all 0.4 ease-in-out;
+}
+
+.tutorial1{
+top: 850px;
+left: 540px;
+position: absolute;
+opacity: 0;
+display: none;
+}
+
+.tutorial2{
+top: 750px;
+left: 960px;
+position: absolute;
+opacity: 0;
+display: none;
+}
+
+.tutorial_dot1{
+transform-origin: top left;
+transform: rotate(-50deg);
+top: 1100px;
+left: 435px;
+position: absolute;
+/* background-color: aqua; */
+width: 310px;
+display: none;
+justify-content: end;
+display: none;
+
+
+animation: tutorialMove1, linear;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+
+}
+
+.tutorial_dot2{
+top: 970px;
+left: 1000px;
+position: absolute;
+opacity: 0;
+display: none;
+
+animation: tutorialMove2, ease-in-out;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+}
+
+
+/* 튜토리얼 애니메이션*/
+@keyframes tutorialMove1{
+0%{
+  transform: rotate(-70deg);
+  opacity: 0;
+}
+10%{
+  opacity: 1;
+  transform: rotate(-70deg);
+}
+90%{
+  opacity: 1;
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(0deg);
+  opacity: 0;
+}
+}
+
+@keyframes tutorialMove2{
+0%{
+  transform: translate(0px, 0px);
+}
+50%{
+  transform: translate(310px, -165px);
+}
+100%{
+  transform: translate(0px, 0px);
+}
+}
+
+
+.tooltip{
+line-height: 150%;
+z-index: 9999;
+font-size: 16px;
+transform: translate(-2vw,0px);
+padding: 24px 36px;
+border-radius: 12px;
+text-align: justify;
+top: 700px;
+left: 450px;
+background-color: #141414;
+display: inline-block;
+color: white;
+position: absolute;
+box-shadow: #14141481 0px 1px 12px;
+transition: all 0.4s ease-in-out;
+}
+
+.tooltip:after{
+z-index: 999;
+content: '';
+position: absolute;
+background-color: #141414;
+width: 36px;
+height: 36px;
+transform: scaleX(50%) rotate(45deg) translateX(-50%);
+
+}
+
+.tooltip1{
+transform: translate(-2vw,0px);
+top: 700px;
+left: 450px;
+
+opacity: 0;
+
+}
+
+.tooltip1:after{
+background-color: #141414;
+bottom: -30px;
+left: 50%;
+}
+
+.tooltip2{
+transform: translate(-2vw,0px);
+top: 1100px;
+left: 1050px;
+
+opacity: 0;
+
+}
+
+.tooltip2:after{
+top: 0px;
+left: 48%;
+}
+
+.tooltip3{
+transform: translate(-2vw,0px);
+top: 200px;
+left: -390px;
+opacity: 0;
+}
+
+.tooltip3:after{
+top: 50%;
+transform: scaleY(50%) rotate(-45deg) translateY(-100%);
+right: -40px;
+background-color: #141414;
+}
+/* 박건도 추가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+
+
+/* base 클래스가 없어서 추가했습니다ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.base{
+z-index: 8;
+}
+
+
+
 .rotate-base{
 position: absolute;
-z-index: 8;
 width: 484px;
 height: 330px;
 transform-origin: top left;
-
 }
 
 .rotate-base img{
@@ -106,6 +273,7 @@ z-index: 2;
 .hand img{
 width: 100%;
 }
+
 .hand-position{
 top: 445px;
 left: 900px;
@@ -113,10 +281,11 @@ position: absolute;
 /* background-color: rgba(57, 68, 68, 0.5); */
 width: 400px;
 height: 600px;
-z-index: 999;
+z-index: 99;
 display: flex;
 transform: translate(115px);
 }
+
 .hand{
 position: absolute;
 width: 195px;
@@ -200,14 +369,15 @@ left: 91vw;
 /* 풀들은 전부 아래로 고정 */
 
 .grass1{
-position:absolute;
+position: absolute;
 width: 700px;
 left: -370px;
-bottom: -61vh;
-z-index: 99;
+bottom: -80vh;
+z-index: 0;
 animation: windmove, linear;
 animation-duration: 40s;
 animation-iteration-count: infinite;
+opacity: 1;
 }
 
 .grass1-1{
@@ -221,6 +391,7 @@ animation: windmove, linear;
 animation-duration: 36s;
 animation-iteration-count: infinite;
 animation-delay: -1.3s;
+opacity: 1;
 }
 
 .grass2{
@@ -386,8 +557,68 @@ top: 270px;
 }
 
 
+/* 아래 박건도 추가----------------------------------------------------------------- */
+.black{
+width: 100vw;
+height: 100vh;
+top: 0;
+left: 0;
+position: fixed;
+z-index: 999;
+background-color: rgba(0, 0, 0, 0.329);
+display: none;
+opacity: 0;
+transition: all 0.4s ease-in-out;
+}
 
-.start{
-width: 50%;
-height: 12ox;
+.headtitle{
+color: #8D8D29;
+top: 300px;
+left: 760px;
+position: absolute;
+transition: all 2s ease;
+}
+
+.headtitle p{
+color: #8D8D29;
+}
+
+
+/* 튜토리얼용 클래스----------------------------------------------------------------- */
+.active{
+display: inline-block;
+}
+
+.active2{
+transform: translate(-2vw,-30px);
+}
+
+.active3{
+display: flex;
+}
+
+
+.opacity10{
+opacity: 1;
+}
+
+.opacity04{
+opacity: 0.4;
+}
+
+
+
+
+/* 버튼 CSS----------------------------------------------------------------- */
+.black button{
+background-color: #FFFFFF;
+border: none;
+border-radius: 50px;
+font-size: 20px;
+padding: 20px 40px;
+left: 50%;
+bottom: 24px;
+position: absolute;
+transform: translate(-50%,0px);
+cursor: pointer;
 }

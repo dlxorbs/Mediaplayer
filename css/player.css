@@ -204,7 +204,7 @@ input[type = range]::-webkit-slider-thumb{
     justify-content: space-between;
 }
 
-button{
+.btncontainer button{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -226,15 +226,10 @@ button{
     background-color: #696D27;
 }
 
-button{
-    width: 72px;
-    height: 72px;
-}
 
 button:active {
 
     box-shadow: inset 1px 2px 6px rgba(0, 0, 0, 0.25);
-    background-color:transparent;
     border: none;
     border-radius: 36px;
 }
