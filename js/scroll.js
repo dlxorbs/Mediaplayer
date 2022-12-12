@@ -16,24 +16,22 @@ let scrollYYto = windowH*1.6;
 $(function () {
     console.log(windowH)
     let scrollYYto = windowH/(1.6);
-
-    // 사람 이미지를 아래에 고정하기 전체 화면의 높이 값 만큼 아래로 내리고 얼굴의 크기 만큼만 다시 올려줌
     $('.container').css('bottom',`-60%`)
+
+    
+
+
     $( window ).resize( function() {
         $('.container').css('bottom',`-60%`)
     })
 
 
-    $('.man').click(function(){
+    $('.startbutton').click(function(){
         let myRepeat = setInterval(function(){
             if(scrollYY < scrollYYto/2){
                 scrollYY = scrollYY + (scrollYY)* acc
-
-
             }else{
                 scrollYY = scrollYY + (scrollYYto - scrollYY)* acc
-
-
             }
 
             if(scrollYY > scrollYYto-5){
@@ -41,13 +39,23 @@ $(function () {
                 tutorial()
             }
             window.scrollTo({top: scrollYY});
-            
+
             $('.container').css('bottom',`${-60+50*(scrollYY/(scrollYYto))}%`)
-            // 나무 패럴랙스
-            $('.tree').css('transform',`translateY(${(240*scrollYY/(scrollYYto))}px)`)
-            // 타이틀 패럴랙스스
+
+            // 나무 패럴렉스
+            $('.tree').css('transform',`translateY(${(200*scrollYY/(scrollYYto))}px)`)
+            console.log(240*scrollYY/(scrollYYto))
+            // 타이틀 패럴렉스
             $('.headtitle').css('transform',`translateY(${(-240*scrollYY/(scrollYYto))}px)`).css('opacity',`0`)
         },10)
     })
 
+
+    
+    // 스크롤 비율만큼 다시 얼굴이 조금 올라와야 함
+    window.onload = function() {
+        setTimeout (function () {
+            scrollTo(0,0);
+        },100);
+    }
 })

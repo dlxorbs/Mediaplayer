@@ -41,6 +41,7 @@ canvas {
   top: 100px;
   left: 0px;
 }
+
 .Bottom{
 z-index: 1;
 top: 1050px;
@@ -347,7 +348,8 @@ z-index: -2;
 .cloud1{
 position: absolute;
 left: 60vw;
-top: 2vh;
+top: 100vh;
+opacity: 0.7;
 }
 
 .sun{
@@ -362,8 +364,9 @@ animation-iteration-count: infinite;
 
 .cloud2{
 position: absolute;
-top: 12vh;
+top: 100px;
 left: 91vw;
+opacity: 0.9;
 }
 
 /* 풀들은 전부 아래로 고정 */
@@ -471,20 +474,20 @@ animation-iteration-count: infinite;
 /* 배경 애니메이션 */
 @keyframes cloudmove{
 from {
-  transform: translateX(-10vw);
+  transform: translateX(-10vw) translateY(-10vw);
 }
 /* keyframe */
 to {
-  transform: translateX(-100vw);
+  transform: translateX(-100vw) translateY(-10vw);
 }
 }
 @keyframes cloudmove2{
 from {
-  transform: translateX(-10vw);
+  transform: translateX(0vw) translateY(0vw);
 }
 /* keyframe */
 to {
-  transform: translateX(-100vw);
+  transform: translateX(-100vw) translateY(0vw);
 }
 }
 @keyframes sunmove{
@@ -562,7 +565,9 @@ top: 270px;
 width: 100vw;
 height: 100vh;
 top: 0;
+bottom: 0;
 left: 0;
+right: 0;
 position: fixed;
 z-index: 999;
 background-color: rgba(0, 0, 0, 0.329);
@@ -574,13 +579,16 @@ transition: all 0.4s ease-in-out;
 .headtitle{
 color: #8D8D29;
 top: 300px;
-left: 760px;
+left: 740px;
 position: absolute;
 transition: all 2s ease;
 }
 
 .headtitle p{
 color: #8D8D29;
+text-align: center;
+font-weight: 700;
+font-size: 20px;
 }
 
 
@@ -610,8 +618,43 @@ opacity: 0.4;
 
 
 /* 버튼 CSS----------------------------------------------------------------- */
+.black div{
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  /* background-color: #8D8D29; */
+  transform: translate(-50%,0px);
+  gap: 24px;
+}
+
 .black button{
 background-color: #FFFFFF;
+border: none;
+border-radius: 50px;
+font-size: 20px;
+padding: 20px 40px;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.black .prev{
+  display: none;
+}
+.black .next{
+}
+
+.lightActive{
+  box-shadow: #eeeecf52 0px 0px 24px;
+}
+
+/* 시작할때 클릭하는 점----------------------------------------------------------------- */
+.startbutton{
+font-weight: 900;
+color: #FFFFFF;
+background-color: #8D8D29;
 border: none;
 border-radius: 50px;
 font-size: 20px;
@@ -619,6 +662,7 @@ padding: 20px 40px;
 left: 50%;
 bottom: 24px;
 position: absolute;
-transform: translate(-50%,0px);
+transform: translate(-50%,100px);
 cursor: pointer;
+z-index: 999;
 }

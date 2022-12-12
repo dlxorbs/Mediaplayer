@@ -128,44 +128,8 @@ $(function(){
         
     // 버튼 이벤트, 기타줄을 놓으면 index에 따라서 곡 재생
     hitbox()
-    $('.hitbox2').on('mouseup',function(){
-        if(mousecliked){
-                currentAudio.currentTime = 0
-                currentAudio.play()
-                moving();
-        }
-        //다시 false로 바꿈
-        mousecliked = false;    
-        mousecliked2 = false;
-    })
 
     hitbox2()
-    $('.hitbox1').on('mouseup',function(){
-         if(mousecliked2){
-                currentAudio.currentTime = 0
-                currentAudio.pause()    
-        }
-        if(currentAudio.paused == true){
-            $('.rotate-base img').attr('src', './img/arm1.svg')  
-        }else{
-            $('.rotate-base img').attr('src', './img/armchange.svg') 
-        }
-        //다시 false로 바꿈
-        mousecliked = false;    
-        mousecliked2 = false;
-    })
-
-    $('.hitbox2').on('mousedown',function(){
-        if(mousecliked2){
-            $('.rotate-base').removeClass('movinghand')
-            $('.rotate-base img').attr('src', './img/arm1.svg')
-        }
-    })
-
-    $('.hitbox1').on('mousedown',function(){
-       $('.rotate-base img').attr('src', './img/armchange.svg')      
-   })
-
 
     // 버튼 이벤트
     $('#btn_play').click(function(){ // 재생/일시정지
@@ -175,7 +139,6 @@ $(function(){
             currentAudio.pause();
         }
     })
-
 
     $('#btn_prev').click(function(){ // 이전곡
         let index = $(currentAudio).parent().index()
@@ -220,6 +183,26 @@ function hitbox(){
             mousecliked = true;
         })
     }
+
+    $('.hitbox1').on('mouseup',function(){
+        if(mousecliked2){
+               currentAudio.currentTime = 0
+               currentAudio.pause()    
+       }
+       if(currentAudio.paused == true){
+           $('.rotate-base img').attr('src', './img/arm1.svg')  
+       }else{
+           $('.rotate-base img').attr('src', './img/armchange.svg') 
+       }
+
+       $('.hitbox1').on('mousedown',function(){
+        $('.rotate-base img').attr('src', './img/armchange.svg')      
+    })
+       //다시 false로 바꿈
+       mousecliked = false;    
+       mousecliked2 = false;
+   })
+    
 }
 
 // 아래 박스에서 마우스를 누르고 윗박스에서 마우스를 떼면 음악정지
@@ -230,6 +213,25 @@ function hitbox2(){
             mousecliked2 = true;
         })
     }
+
+    $('.hitbox2').on('mouseup',function(){
+        if(mousecliked){
+                currentAudio.currentTime = 0
+                currentAudio.play()
+                moving();
+        }
+
+        $('.hitbox2').on('mousedown',function(){
+            if(mousecliked2){
+                $('.rotate-base').removeClass('movinghand')
+                $('.rotate-base img').attr('src', './img/arm1.svg')
+            }
+        })
+        //다시 false로 바꿈
+        mousecliked = false;    
+        mousecliked2 = false;
+    })
+
 }
 
 
