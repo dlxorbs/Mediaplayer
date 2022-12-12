@@ -58,11 +58,7 @@ $(function(){
             $('.title > p').text(audios[i].title)
             $('.singer > p').text(audios[i].author)
 
-
-     
-
-
-            //왼손움직임시 앨범 캐러셀 변경
+            //왼손움직임시 앨범 캐러셀 변경 
             let index = $(currentAudio).parent().index()
             console.log((index) % audios.length)
 
@@ -98,8 +94,6 @@ $(function(){
     // 현재 시간 얻기
     setInterval(function(){
         let location = currentAudio.currentTime/currentAudio.duration*100
-        $('#current_progress').val(location)
-
         let time = Math.floor(currentAudio.currentTime);
         let minutes = parseInt(time/60)
         if(minutes < 10){
@@ -120,7 +114,7 @@ $(function(){
         }
 
          $('#current_progress').css({
-            'background' : ' linear-gradient(to right, #696D27 0%, #696D27 '+ location +'%, #ececec '+ location + '%, #ececec 100%)',
+            'background' : ' linear-gradient(to right, #696D27 0%, #696D27 '+ location +'%, #DADEDB '+ location + '%, #DADEDB 100%)',
             'transition' : '0.2s'
         })
 
@@ -128,7 +122,6 @@ $(function(){
         
     // 버튼 이벤트, 기타줄을 놓으면 index에 따라서 곡 재생
     hitbox()
-
     hitbox2()
 
     // 버튼 이벤트
@@ -145,7 +138,7 @@ $(function(){
         $('.playlist').eq( (index - 1) % audios.length ).click()
         let range             = $('#volume').val()
         currentAudio.volume   = range/100;
-        console.log(index)
+        currentAudio.pause();
     })
 
     $('#btn_next').click(function(){ // 다음곡
@@ -153,17 +146,15 @@ $(function(){
         $('.playlist').eq( (index + 1) % audios.length).click()
         let range            = $('#volume').val()
         currentAudio.volume  = range/100;
-        console.log(index)
-        console.log(currentAudio.paused)
+        currentAudio.pause();
     })
 
     $('#volume').on('input', function(){
-
         let range            = $(this).val()
         currentAudio.volume  = range/100;
 
          $(this).css({
-            'background' : ' linear-gradient(to right, #FFE283 0%, #FFE283 '+ range +'%, #ececec '+ range+'%, #ececec 100%)'
+            'background' : ' linear-gradient(to right, #FFE283 0%, #FFE283 '+ range +'%, #DADEDB '+ range+'%, #DADEDB 100%)'
         })
 
     });

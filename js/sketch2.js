@@ -60,8 +60,17 @@ $(function () {
                     // console.log(left,-100+100*i)
                     $('.hand').css("left", u).css("top", t)
 
-                    $('.playlist').eq(i).click()
-                    currentAudio.pause()
+                    if(currentAudio.paused == false){
+             
+                        $('.playlist').eq(i).click()
+                
+                    }else{
+                        $('.playlist').eq(i).click()
+                        currentAudio.pause()
+                    }
+
+
+  
                     goal = 330-(i*100)
                     $('.arm_bottom').css("left", u).css("top", t+50)
 
@@ -72,17 +81,6 @@ $(function () {
         }
         handChange()
     })
-    // $(document).mousemove(function(e){
-    //     mouseX = e.pageX;
-    //     mouseY = e.pageY;
-    //     console.log(mouseX,mouseY)
-        // $('.hand').css("left", mouseX).css("top", mouseY)
-    // })
-    // $(document).click(function(e){
-    //     goal = 500;
-    //     console.log(goal)
-    // })
-    
 })
 
 function handChange(){
