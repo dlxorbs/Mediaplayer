@@ -28,8 +28,6 @@ let audios = [
 
 // 마우스를 눌렀나?
 let mousecliked = false;
-
-// 마우스를 눌렀나 - 아래?
 let mousecliked2 = false;
 
 
@@ -149,7 +147,7 @@ $(function(){
         $('.start').text( minutes +':'+ parseInt((time%60)/10) +  (time%60)%10);
         $('.end').text(fullminutes+ ':' + parseInt((fulltime%60)/10) + parseInt((fulltime%60)%10) );
         if(location == 100){
-            let index = $(currentAudio).parent().index()
+            let index           = $(currentAudio).parent().index()
             $('.playlist').eq( (index + 1) % audios.length ).click()
             let range = $('#volume').val()
             currentAudio.volume = range/100;            
@@ -161,15 +159,8 @@ $(function(){
         })
 
         }, 100)
-        // console.log(location)
-
-    
-
-
-
         
     // 버튼 이벤트, 기타줄을 놓으면 index에 따라서 곡 재생
-    // 박건도 추가@@@@@@@@@@@@@@@@@@@@@@@@@
     hitbox()
     $('.hitbox2').on('mouseup',function(){
         if(mousecliked){
@@ -177,7 +168,6 @@ $(function(){
                 currentAudio.play()
                 moving();
         }
-
 
         //다시 false로 바꿈
         mousecliked = false;
@@ -206,54 +196,35 @@ $(function(){
     // 버튼 이벤트
     $('#btn_play').click(function(){ // 재생/일시정지
         if(currentAudio.paused == true){
-            currentAudio.play();
-            console.log(currentAudio.currentTime)
+            currentAudio.play();    
         } else{
             currentAudio.pause();
-            console.log(currentAudio.paused)
         }
     })
 
 
-    // $('#btn_stop').click(function(){ // 완전 정지
-    //     currentAudio.pause()
-    //     currentAudio.currentTime = 0
-
-    //     $('.rotate-base').removeClass('movinghand')
-    //     $('.rotate-base img').attr('src', './img/arm1.svg')
-        
-    //     let range = $('#volume').val()
-    //     currentAudio.volume = range/100;
-    // })
-
     $('#btn_prev').click(function(){ // 이전곡
         let index = $(currentAudio).parent().index()
         $('.playlist').eq( (index - 1) % audios.length ).click()
-        let range = $('#volume').val()
-        currentAudio.volume = range/100;
+        let range             = $('#volume').val()
+        currentAudio.volume   = range/100;
         console.log(index)
-
-        
-        // $('.album').css('transform',`translate(${-((index - 1) % audios.length)*(300+12)}px)`)
     })
 
     $('#btn_next').click(function(){ // 다음곡
         let index = $(currentAudio).parent().index()
         $('.playlist').eq( (index + 1) % audios.length).click()
-        let range = $('#volume').val()
-        currentAudio.volume = range/100;
+        let range            = $('#volume').val()
+        currentAudio.volume  = range/100;
         console.log(index)
         console.log(currentAudio.paused)
-        // $('.album').css('transform',`translate(${-((index + 1) % audios.length)*(300+12)}px)`)
     })
 
     $('#volume').on('input', function(){
 
-        let range = $(this).val()
-        currentAudio.volume = range/100;
+        let range            = $(this).val()
+        currentAudio.volume  = range/100;
 
-
-        console.log(range)
          $(this).css({
             'background' : ' linear-gradient(to right, #FFE283 0%, #FFE283 '+ range +'%, #ececec '+ range+'%, #ececec 100%)'
         })
@@ -263,8 +234,6 @@ $(function(){
     $('button').click(function(){ // 클릭시 움직이는 함수 실행
         moving();
 
-
-        console.log(this)
     })
 
 })

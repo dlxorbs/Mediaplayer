@@ -6,6 +6,9 @@ let scrollYY = 4;
 // 사람 바디 높이
 let bodyH = 1500;
 
+// 스크를 끝
+let scrollEnd = false;
+
 // 화면 크기
 let windowH = window.innerHeight;
 let scrollYYto = windowH*1.6;
@@ -41,15 +44,8 @@ $(function () {
         $('.container').css('bottom',`-60%`)
     })
 
-    $(document).keydown(function(){
-        scrollYY = 4;
-        window.scrollTo({top:scrollYY});
-        $('.container').css('bottom',`-60%`)
-        $('.player').css('bottom', '-800px')
 
-    })
-
-    $(document).click(function(){
+    $('.man').click(function(){
         let myRepeat = setInterval(function(){
             if(scrollYY < scrollYYto/2){
                 scrollYY = scrollYY + (scrollYY)* acc
@@ -63,17 +59,21 @@ $(function () {
 
             if(scrollYY > scrollYYto-5){
                 clearTimeout(myRepeat);
-                $('.player').css('bottom', '40px')
+                tutorial()
+                //박건도 추가---------------------------------------------------------------
+                // 튜토리얼이 끝날때 나타나는 타이밍으로 바꿈----------------------------------
+                // $('.player').css('bottom', '40px')
             }
             window.scrollTo({top: scrollYY});
-
+            
 
 
             $('.container').css('bottom',`${-60+50*(scrollYY/(scrollYYto))}%`)
 
             // 나무 패러셀
-            $('.tree').css('transform',`translateY(${(200*scrollYY/(scrollYYto))}px)`)
-
+            $('.tree').css('transform',`translateY(${(240*scrollYY/(scrollYYto))}px)`)
+            // 타이틀 패러셀
+            $('.headtitle').css('transform',`translateY(${(-240*scrollYY/(scrollYYto))}px)`).css('opacity',`0`)
         },10)
     })
 

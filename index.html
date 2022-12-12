@@ -18,15 +18,56 @@
     <script src="./js/hand.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/music.js"></script>
-
+    <script src="./js/tutorial.js"></script>
 
 
   <div class="container">
 
-
-
   <main>
   </main>
+
+    <!-- 추가한 튜토리얼 부분--------------------------------------------------> 
+
+    <div class="headtitle">
+      <img src="img/tutorial/title.svg" alt="">
+      <p>
+        직접 기타를 연주해 음악을 들으세요.
+      </p>
+    </div>
+
+      <!-- 모달을 위한 검은 배경 부분 -->
+      <div class="black">
+        <button>다음 <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+  
+        <!-- 추가한 툴팁1 -->
+      <div class="tutorial tooltip tooltip1">
+        캐릭터의 오른손으로 기타를 칠 수 있어요!<br>아랫쪽으로 줄을 당기면 현재 곡을 재생해요
+      </div>
+  
+        <!-- 추가한 툴팁2 -->
+      <div class="tutorial tooltip tooltip2">
+        캐릭터의 왼손을 드래그해서<br>재생할 곡을 선택할 수 있어요! <br>원하는 음악을 재생해보세요!
+      </div>
+      
+  
+      <div class="tutorial tutorial2">
+        <img src="img/tutorial/tutorial2.svg" alt="" style="-webkit-user-drag: none;">
+        <!-- 동그란 원이 어떻게 움직여야 하는지 보여줌 --> 
+      </div>
+      <div class="tutorial tutorial_dot1">
+        <img src="img/tutorial/tutorial_dot.svg" alt="" style="-webkit-user-drag: none;">
+      </div>
+      <!-- 오른쪽 손에 튜토리얼 이미지를 넣음 -->
+      <div class="tutorial tutorial1">
+        <img src="img/tutorial/tutorial.svg" alt="" style="-webkit-user-drag: none;">
+      </div>
+      <!-- 왼쪽 손에 튜토리얼 이미지를 넣음 -->
+      <div class="tutorial tutorial_dot2">
+        <img src="img/tutorial/tutorial_dot.svg" alt="" style="-webkit-user-drag: none;">
+      </div>
+      <!-- 추가한 튜토리얼 부분--------------------------------------------------> 
+
 
   <div class="hand-position">
     <div class="hand">
@@ -59,6 +100,7 @@
     <div class="body man">
       <img src="./img/body_Top.svg" alt="">
     </div>
+
     <div class="arm">
       <div class="rotate">
       <div class="arm_top">
@@ -80,29 +122,16 @@
     </div>
   </div>
 
-  <!-- <div class="player">
-
-    <h1 id="current_title"></h1>
-    <div id="progressbar">
-      <input type="range" min="0" max="100" id = "current_progress">
-    </div>
-
-
-
-    <input type="range" min="0" max="100" id = "volume">
-    <button id="btn_play">재생</button>
-    <button id="btn_stop">정지</button>
-    <button id="btn_prev">이전</button>
-    <button id="btn_next">다음</button>
-
-
-    <div class="playlists"></div>
-  </div> -->
-
 
 
 
 <div class="player">
+
+   <!-- 추가한 툴팁3 -->
+   <div class="tutorial tooltip tooltip3">
+    현재 선택된 곡의 정보를 <br> 확인 하고 직접 버튼을<br>눌러서 음악을 조절할 수 있어요!
+  </div>
+
   <h1 id="current_title"></h1>
   <div class="cut">
   <div class="album">
