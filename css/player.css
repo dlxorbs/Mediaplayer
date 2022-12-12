@@ -53,7 +53,7 @@
     /* border: 1px solid rgb(255, 255, 255); */
     /* height: 4px; */
     border-radius: 2px;
-    margin: 0 0 12px 0;
+
 }
 
 #current_progress{
@@ -62,52 +62,52 @@
  transition: 0.5s;
 
  -webkit-appearance: none;
- background: linear-gradient(to right, #0b8a31 0%, #0b8a31 50%, #ececec 50%, #ececec 100%);
+ background: linear-gradient(to right, #696D27 0%, #696D27 50%, #DADEDB 50%, #DADEDB 100%);
  color: transparent;
  border-radius: 9999px;
 }
 
-
 #volume{
     width: 100%;
     -webkit-appearance: none;
-    background: linear-gradient(to right, #FFE283 0%, #FFE283 50%, #ececec 50%, #ececec 100%);
+    background: linear-gradient(to right, #FFE283 0%, #FFE283 50%, #DADEDB 50%, #DADEDB 100%);
     color: transparent;
     border-radius: 9999px;
 }
 
-input[type = range]::-webkit-slider-thumb{
+#current_progress::-webkit-slider-thumb{
     -webkit-appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+
     background-color: #FFFFFF00;
-    /* color: transparent; */
+    color: transparent;
 }
 
-
-input[type = range]::-webkit-slider-thumb { 
+#volume::-webkit-slider-thumb { 
     -webkit-appearance: none;
     background: #ffffff;
     cursor: pointer;
-    height:24px; 
-    width:24px;   
-    margin-top: -7px;
-    margin-bottom: -7px; 
-    box-shadow: 1px 1px 6px #00000025; 
+    height:20px; 
+    width:20px;   
+    margin-top: -6px;
+    margin-bottom: -6px; 
+    box-shadow: 1px 2px 5px 2px #00000035; 
     border-radius: 9999px;
     
   }
 
-  input[type = range]::-webkit-slider-thumb:active { 
+  #volume::-webkit-slider-thumb:active { 
     -webkit-appearance: none;
-    background: #f4f4f4;
+    background: #ececec;
     cursor: pointer;
-    height:24px; 
-    width:24px;   
-    margin-top: -7px; 
-    margin-bottom: -7px;
+    height:20px; 
+    width:20px;   
+    margin-top: -6px;
+    margin-bottom: -6px; 
     box-shadow: 1px 1px 6px #00000025; 
     border-radius: 9999px;
+    transition: 0.2s;
   }
 
 
@@ -142,7 +142,9 @@ input[type = range]::-webkit-slider-thumb {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    color: rgb(63, 70, 68);
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+    margin: 6px 0px 12px 0px;
 }
 
 
