@@ -27,23 +27,38 @@
     width: 345px;
 }
 .album{
-    margin-left: 24px;
+    margin-left: 72px;
     width: 340px;
-    height: 340px;
+    height: 300px;
 
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 36px;
     transition: all 0.6s ease-in-out;
     /* background-color: #56533F; */
 }
 
 .album>div{
-    width: 300px;
+    width: 200px;
+    transition: 0.2s;
+
+}
+
+
+.album>div:nth-child(1){
+    width: 200px;
+    transform: scale(1.2);
+
+}
+
+.album>div:nth-child(2){
+    width: 200px;
+    transform: scale(0.9);
+
 }
 
 .album>div img{
-    width: 300px;
+    width: 200px;
     border-radius: 12px;
     box-shadow: 0 0 1rem 0 #56533F;
 }
