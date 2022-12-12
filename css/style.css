@@ -341,7 +341,7 @@ animation : movinghand  1s infinite;
 position: absolute;
 width: 900px;
 left: -8vw;
-bottom: -24vh;
+bottom: -70vh;
 z-index: -2;
 }
 .cloud1{
@@ -410,7 +410,7 @@ animation-delay: -2.3s;
 position:absolute;
 width: 700px;
 right: 5vw;
-bottom: -61vh;
+bottom: -71vh;
 z-index: -1;
 animation: windmove, linear;
 animation-duration: 45s;
@@ -436,7 +436,7 @@ animation-delay: -1.5s;
 position:absolute;
 width: 600px;
 right: 400px;
-bottom: -61vh;
+bottom: -71vh;
 z-index: -1;
 animation: windmove, linear;
 animation-duration: 42s;

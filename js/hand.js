@@ -21,28 +21,6 @@ $(function () {
         }
     })
 
-    $(document).mouseup(function(){
-        if(mouseX < $(document).innerWidth()*4/9 
-        && mouseY > $(document).innerHeight()/2){
-            isclicked = false;
-            RighthandChange()
-        }
-    })
-    $(document).mousedown(function(){
-        if(mouseX < $(document).innerWidth()*4/9 
-        && mouseY > $(document).innerHeight()/2){
-            isclicked = true;
-            RighthandChange()
-        }
-
-    })
-    // $(document).mousemove(function(){
-    //     isclicked = true;
-    //     RighthandChange()
-    // })
-
-    
-
 
 })
 

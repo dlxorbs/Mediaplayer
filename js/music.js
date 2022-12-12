@@ -31,40 +31,6 @@ let mousecliked = false;
 let mousecliked2 = false;
 
 
-// 윗 박스에서 마우스를 누르고 아래박스에서 마우스를 떼면 음악재생
-function hitbox(){
-    // 위 좌표에서 아래좌표로 가면 true로 변경
-    for (let i = 0; i < 5; ++i){
-        $('.hitbox1').eq(i).on('mousedown',function(e){
-            mousecliked = true;
-        })
-    }
-}
-
-// 아래 박스에서 마우스를 누르고 윗박스에서 마우스를 떼면 음악정지
-function hitbox2(){
-    // 아래 좌표에서 위좌표로 가면 true로 변경
-    for (let i = 0; i < 5; ++i){
-        $('.hitbox2').eq(i).on('mousedown',function(e){
-            mousecliked2 = true;
-        })
-    }
-}
-
-
-function moving(){
-    if(currentAudio.paused == false){
-        $('.rotate-base').addClass('movinghand')
-        $('.rotate-base img').attr('src', './img/armchange.svg')
-        $('#btn_play > img').attr('src', './img/stop.svg')
-
-    }else{
-        $('.rotate-base').removeClass('movinghand')
-        $('.rotate-base img').attr('src', './img/armchange.svg')
-        $('#btn_play > img').attr('src', './img/play.svg')
-    }
-}
-
 
   // 현재 재생중인 오디오
   let currentAudio = new Audio()
@@ -154,11 +120,11 @@ $(function(){
         }
 
          $('#current_progress').css({
-            'background' : ' linear-gradient(to right, #0b8a31 0%, #0b8a31 '+ location +'%, #ececec '+ location + '%, #ececec 100%)',
-     
+            'background' : ' linear-gradient(to right, #696D27 0%, #696D27 '+ location +'%, #ececec '+ location + '%, #ececec 100%)',
+            'transition' : '0.2s'
         })
 
-        }, 100)
+        }, 0.1)
         
     // 버튼 이벤트, 기타줄을 놓으면 index에 따라서 곡 재생
     hitbox()
@@ -168,22 +134,25 @@ $(function(){
                 currentAudio.play()
                 moving();
         }
-
         //다시 false로 바꿈
-        mousecliked = false;
-        console.log(mousecliked)
+        mousecliked = false;    
+        mousecliked2 = false;
     })
 
     hitbox2()
     $('.hitbox1').on('mouseup',function(){
          if(mousecliked2){
                 currentAudio.currentTime = 0
-                currentAudio.pause()          
+                currentAudio.pause()    
         }
-
+        if(currentAudio.paused == true){
+            $('.rotate-base img').attr('src', './img/arm1.svg')  
+        }else{
+            $('.rotate-base img').attr('src', './img/armchange.svg') 
+        }
         //다시 false로 바꿈
+        mousecliked = false;    
         mousecliked2 = false;
-        console.log(mousecliked2)
     })
 
     $('.hitbox2').on('mousedown',function(){
@@ -192,6 +161,11 @@ $(function(){
             $('.rotate-base img').attr('src', './img/arm1.svg')
         }
     })
+
+    $('.hitbox1').on('mousedown',function(){
+       $('.rotate-base img').attr('src', './img/armchange.svg')      
+   })
+
 
     // 버튼 이벤트
     $('#btn_play').click(function(){ // 재생/일시정지
@@ -231,11 +205,45 @@ $(function(){
 
     });
     
-    $('button').click(function(){ // 클릭시 움직이는 함수 실행
+    $('.btn').click(function(){ // 클릭시 움직이는 함수 실행
         moving();
-
     })
 
 })
+
+
+// 윗 박스에서 마우스를 누르고 아래박스에서 마우스를 떼면 음악재생
+function hitbox(){
+    // 위 좌표에서 아래좌표로 가면 true로 변경
+    for (let i = 0; i < 5; ++i){
+        $('.hitbox1').eq(i).on('mousedown',function(e){
+            mousecliked = true;
+        })
+    }
+}
+
+// 아래 박스에서 마우스를 누르고 윗박스에서 마우스를 떼면 음악정지
+function hitbox2(){
+    // 아래 좌표에서 위좌표로 가면 true로 변경
+    for (let i = 0; i < 5; ++i){
+        $('.hitbox2').eq(i).on('mousedown',function(e){
+            mousecliked2 = true;
+        })
+    }
+}
+
+
+function moving(){
+    if(currentAudio.paused == false){
+        $('.rotate-base').addClass('movinghand')
+        $('.rotate-base img').attr('src', './img/armchange.svg')
+        $('#btn_play > img').attr('src', './img/stop.svg')
+
+    }else{
+        $('.rotate-base').removeClass('movinghand')
+        $('.rotate-base img').attr('src', './img/arm1.svg')
+        $('#btn_play > img').attr('src', './img/play.svg')
+    }
+}
 
 
