@@ -20,7 +20,7 @@ let audios = [
     {
         audio: './musics/03.mp3',
         image: 'img/album/03.jpg',
-        title: 'We Were Dancing In The Dark',
+        title: 'Dancing In The Dark',
         author: 'Rory Mcleod'
 
     }
@@ -60,13 +60,22 @@ $(function(){
 
             //왼손움직임시 앨범 캐러셀 변경 
             let index = $(currentAudio).parent().index()
-            console.log((index) % audios.length)
+      
+            let list = $('.album > div')
+            $('.album').css('transform',`translateX(${-((index) % audios.length)*(200+36)}px) scale(1)`)
 
-            $('.album').css('transform',`translateX(${-((index) % audios.length)*(300+12)}px)`)
-
+            $(list.eq(index+1)).css({'transform':` scale(0.9) translateX(0)`,
+                                      'z-index' : '0'
+                                        })
+            $(list.eq(index-1)).css({'transform':` scale(0.9) translateX(0)`,
+                                      'z-index' : '0'
+                                    })
+            $(list.eq(index)).css({'transform':` scale(1.2)` , 'z-index' : '1'})
+            $(list.eq(index + 2)).css('transform',` scale(0.9)`)
+            $(list.eq(index - 2)).css('transform',` scale(0.9)`)
             let u = 100*i;
             let t = handTop + (handLeft - u)*5/9;
-
+            console.log(list.eq(index+2))
             //손회전
             $('.hand').css("left", u).css("top", t)
             goal = 330-(i*100)
@@ -76,6 +85,8 @@ $(function(){
         })
 
     }
+       
+
 
     // 현재 재생 기본 값 (0번 곡 자동으로 지정)
 
@@ -162,6 +173,7 @@ $(function(){
     $('.btn').click(function(){ // 클릭시 움직이는 함수 실행
         moving();
     })
+
 
 })
 
