@@ -21,11 +21,6 @@ $(function () {
     
 
 
-    $( window ).resize( function() {
-        $('.container').css('bottom',`-60%`)
-    })
-
-
     $('.startbutton').click(function(){
         let myRepeat = setInterval(function(){
             if(scrollYY < scrollYYto/2){

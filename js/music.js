@@ -20,7 +20,7 @@ let audios = [
     {
         audio: './musics/03.mp3',
         image: 'img/album/03.jpg',
-        title: 'We Were Dancing In The Dark',
+        title: 'Dancing In The Dark',
         author: 'Rory Mcleod'
 
     }
@@ -58,19 +58,24 @@ $(function(){
             $('.title > p').text(audios[i].title)
             $('.singer > p').text(audios[i].author)
 
-
-     
-
-
-            //왼손움직임시 앨범 캐러셀 변경
+            //왼손움직임시 앨범 캐러셀 변경 
             let index = $(currentAudio).parent().index()
-            console.log((index) % audios.length)
+      
+            let list = $('.album > div')
+            $('.album').css('transform',`translateX(${-((index) % audios.length)*(200+36)}px) scale(1)`)
 
-            $('.album').css('transform',`translateX(${-((index) % audios.length)*(300+12)}px)`)
-
+            $(list.eq(index+1)).css({'transform':` scale(0.9) translateX(0)`,
+                                      'z-index' : '0'
+                                        })
+            $(list.eq(index-1)).css({'transform':` scale(0.9) translateX(0)`,
+                                      'z-index' : '0'
+                                    })
+            $(list.eq(index)).css({'transform':` scale(1.2)` , 'z-index' : '1'})
+            $(list.eq(index + 2)).css('transform',` scale(0.9)`)
+            $(list.eq(index - 2)).css('transform',` scale(0.9)`)
             let u = 100*i;
             let t = handTop + (handLeft - u)*5/9;
-
+            console.log(list.eq(index+2))
             //손회전
             $('.hand').css("left", u).css("top", t)
             goal = 330-(i*100)
@@ -80,6 +85,8 @@ $(function(){
         })
 
     }
+       
+
 
     // 현재 재생 기본 값 (0번 곡 자동으로 지정)
 
@@ -98,8 +105,6 @@ $(function(){
     // 현재 시간 얻기
     setInterval(function(){
         let location = currentAudio.currentTime/currentAudio.duration*100
-        $('#current_progress').val(location)
-
         let time = Math.floor(currentAudio.currentTime);
         let minutes = parseInt(time/60)
         if(minutes < 10){
@@ -120,7 +125,7 @@ $(function(){
         }
 
          $('#current_progress').css({
-            'background' : ' linear-gradient(to right, #696D27 0%, #696D27 '+ location +'%, #ececec '+ location + '%, #ececec 100%)',
+            'background' : ' linear-gradient(to right, #696D27 0%, #696D27 '+ location +'%, #DADEDB '+ location + '%, #DADEDB 100%)',
             'transition' : '0.2s'
         })
 
@@ -128,7 +133,6 @@ $(function(){
         
     // 버튼 이벤트, 기타줄을 놓으면 index에 따라서 곡 재생
     hitbox()
-
     hitbox2()
 
     // 버튼 이벤트
@@ -151,7 +155,7 @@ $(function(){
         }
         let range             = $('#volume').val()
         currentAudio.volume   = range/100;
-        console.log(index)
+        currentAudio.pause();
     })
 
     $('#btn_next').click(function(){ // 다음곡
@@ -167,17 +171,15 @@ $(function(){
 
         let range            = $('#volume').val()
         currentAudio.volume  = range/100;
-        console.log(index)
-        console.log(currentAudio.paused)
+        currentAudio.pause();
     })
 
     $('#volume').on('input', function(){
-
         let range            = $(this).val()
         currentAudio.volume  = range/100;
 
          $(this).css({
-            'background' : ' linear-gradient(to right, #FFE283 0%, #FFE283 '+ range +'%, #ececec '+ range+'%, #ececec 100%)'
+            'background' : ' linear-gradient(to right, #FFE283 0%, #FFE283 '+ range +'%, #DADEDB '+ range+'%, #DADEDB 100%)'
         })
 
     });
@@ -185,6 +187,7 @@ $(function(){
     $('.btn').click(function(){ // 클릭시 움직이는 함수 실행
         moving();
     })
+
 
 })
 
