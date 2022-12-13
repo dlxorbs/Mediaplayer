@@ -20,9 +20,6 @@ let moves = [false,false,false,false]
 let ballx=[]
 let bally=[]
 
-// let ballx;
-// let bally;
-
 //기타줄을 대각선으로 만들기 위해서 각 베지어의 마지막 Y값에 더하고 빼준 값
 let stringRotate = 295;
 
@@ -41,13 +38,6 @@ let M = 2,  // Mass
 // 스프링의 기타줄 변수들
 let stringsVY = [];
 let stringsVX = [];
-
-// //기타줄의 소리들
-// let 당길때 = createAudio('assets/beat.mp3');
-// let one = createAudio('assets/beat.mp3');
-// let two = createAudio('assets/beat.mp3');
-// let three = createAudio('assets/beat.mp3');
-// let four = createAudio('assets/beat.mp3');
 
 function setup() {
     createCanvas(1300, 750);
@@ -68,11 +58,6 @@ function setup() {
         // 기타줄위에 있는지 확인하기
         ballx.push(100)
         bally.push(100)
-        // 변수를 Push한것처럼 뭐시기
-        // ballsx = 1040-mouseY*(width/height);
-        // ballsy = (580-mouseX*(height/width));
-        // ballx.push(ballsx)
-        // bally.push(ballsy)
     }
 }
 
@@ -81,10 +66,6 @@ function draw() {
     updateSpring();
     drawWire();
     Logics();
-    // for (let i = 0; i < stringsVY.length; ++i) {
-    //     ellipse(ballx[i], bally[i], 20,20);
-    // }
-    // ellipse(mouseX, mouseY, 20,20);
 }
 
 //베지어를 for문을 이용해 여러개 그려줌
@@ -171,7 +152,6 @@ function updateSpring() {
         }
     }
 
-    //이게 뭐지?
     // Set and constrain the position of top bar
     for (let i = 0; i < stringsVY.length; ++i) {
         move_i = i;
@@ -198,7 +178,4 @@ function mouseReleased() {
     for (let i = 0; i < stringsVY.length; ++i) { 
         moves[i] = false;
     }
-    // oen.play();
 }
-
-// console.log(stringsVX)

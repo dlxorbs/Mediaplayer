@@ -135,6 +135,7 @@ $(function(){
     $('#btn_play').click(function(){ // 재생/일시정지
         if(currentAudio.paused == true){
             currentAudio.play();    
+ 
         } else{
             currentAudio.pause();
         }
@@ -142,7 +143,12 @@ $(function(){
 
     $('#btn_prev').click(function(){ // 이전곡
         let index = $(currentAudio).parent().index()
-        $('.playlist').eq( (index - 1) % audios.length ).click()
+        if(currentAudio.paused == true){
+            $('.playlist').eq( (index - 1) % audios.length).click()
+            currentAudio.pause()
+        }else{
+            $('.playlist').eq( (index - 1) % audios.length).click()
+        }
         let range             = $('#volume').val()
         currentAudio.volume   = range/100;
         console.log(index)
@@ -150,7 +156,15 @@ $(function(){
 
     $('#btn_next').click(function(){ // 다음곡
         let index = $(currentAudio).parent().index()
-        $('.playlist').eq( (index + 1) % audios.length).click()
+     
+        if(currentAudio.paused == true){
+            $('.playlist').eq( (index + 1) % audios.length).click()
+            currentAudio.pause()
+        }else{
+            $('.playlist').eq( (index + 1) % audios.length).click()
+        }
+
+
         let range            = $('#volume').val()
         currentAudio.volume  = range/100;
         console.log(index)
@@ -189,19 +203,24 @@ function hitbox(){
                currentAudio.currentTime = 0
                currentAudio.pause()    
        }
+       
        if(currentAudio.paused == true){
            $('.rotate-base img').attr('src', './img/arm1.svg')  
+           $('#btn_play > img').attr('src', './img/play.svg')
        }else{
            $('.rotate-base img').attr('src', './img/armchange.svg') 
+           $('#btn_play > img').attr('src', './img/stop.svg')
        }
-
-       $('.hitbox1').on('mousedown',function(){
-        $('.rotate-base img').attr('src', './img/armchange.svg')      
-    })
-       //다시 false로 바꿈
-       mousecliked = false;    
-       mousecliked2 = false;
+  //다시 false로 바꿈
+  mousecliked = false;    
+  mousecliked2 = false;
+     
    })
+
+   $('.hitbox1').on('mousedown',function(){
+    $('.rotate-base img').attr('src', './img/armchange.svg')      
+})
+ 
     
 }
 
@@ -218,18 +237,24 @@ function hitbox2(){
         if(mousecliked){
                 currentAudio.currentTime = 0
                 currentAudio.play()
-                moving();
+                moving();    
         }
+        if(currentAudio.paused == true){
+            $('.rotate-base img').attr('src', './img/arm1.svg')  
+        }else{
+            $('.rotate-base img').attr('src', './img/armchange.svg') 
+        }
+    //다시 false로 바꿈
+    mousecliked = false;    
+    mousecliked2 = false;
+    })
 
-        $('.hitbox2').on('mousedown',function(){
-            if(mousecliked2){
-                $('.rotate-base').removeClass('movinghand')
-                $('.rotate-base img').attr('src', './img/arm1.svg')
-            }
-        })
-        //다시 false로 바꿈
-        mousecliked = false;    
-        mousecliked2 = false;
+    $('.hitbox2').on('mousedown',function(){
+        if(mousecliked2){
+            $('.rotate-base').removeClass('movinghand')
+            $('.rotate-base img').attr('src', './img/arm1.svg')
+        }
+        $('.rotate-base img').attr('src', './img/armchange.svg')
     })
 
 }

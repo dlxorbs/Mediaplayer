@@ -5,9 +5,6 @@ let goal = 330;
 
 //손 위치에 따라서 현재 플레이되는 곡
 let nowMusic = 0;
-
-
-//박건도 손 위치 변경@@@@@@@@@@@@@@@@
 let isDragging = false;
 let handLeft = 0;
 let handTop = 260;
@@ -72,17 +69,6 @@ $(function () {
         }
         handChange()
     })
-    // $(document).mousemove(function(e){
-    //     mouseX = e.pageX;
-    //     mouseY = e.pageY;
-    //     console.log(mouseX,mouseY)
-        // $('.hand').css("left", mouseX).css("top", mouseY)
-    // })
-    // $(document).click(function(e){
-    //     goal = 500;
-    //     console.log(goal)
-    // })
-    
 })
 
 function handChange(){
